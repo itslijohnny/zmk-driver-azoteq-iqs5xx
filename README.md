@@ -5,10 +5,10 @@
 This driver should work with any IQS5XX based trackpad. However, it has only been tested and known to work with the following models:
 
 - TPS43 (Reached EOL)
+- TPS65 (Reached EOL) per @Mac10goesBRRRT
 
 Feel free to send a pull request if you test with any of the following models:
 
-- TPS65 (Reached EOL)
 - TPR40
 - TPR48
 - TPR54
