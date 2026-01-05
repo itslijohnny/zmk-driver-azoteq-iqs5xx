@@ -215,10 +215,14 @@ static void iqs5xx_work_handler(struct k_work *work) {
             goto end_comm;
         }
 
-        if (rel_x != 0 || rel_y != 0) {
-            input_report_rel(dev, INPUT_REL_X, rel_x, false, K_FOREVER);
-            input_report_rel(dev, INPUT_REL_Y, rel_y, true, K_FOREVER);
-        }
+    if (rel_x != 0 || rel_y != 0) {
+        // Hardcode your transformations here:
+        int16_t new_x = -rel_x;      // swap axes
+        int16_t new_y = -rel_y;     // swap + flip
+        
+        input_report_rel(dev, INPUT_REL_X, new_x, false, K_FOREVER);
+        input_report_rel(dev, INPUT_REL_Y, new_y, true, K_FOREVER);
+    }
     }
 
 end_comm:
