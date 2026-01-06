@@ -216,8 +216,8 @@ static void iqs5xx_work_handler(struct k_work *work) {
         }
         if (rel_x != 0 || rel_y != 0) {
             // Apply transformations: swap axes + flip both
-            int16_t temp_x = rel_x;      // swap: x becomes y
-            int16_t temp_y = rel_y;      // swap: y becomes x
+            int16_t temp_x = rel_x;
+            int16_t temp_y = rel_y;
             temp_x = -temp_x;            // flip x
             temp_y = -temp_y;            // flip y
             
