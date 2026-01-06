@@ -178,7 +178,7 @@ static void iqs5xx_work_handler(struct k_work *work) {
         k_work_schedule(&data->button_release_work, K_MSEC(100));
     } else if (scroll) {
         // TODO: Expose this divisor.
-        int16_t scroll_div = 32;
+        int16_t scroll_div = 16;
 
         // Only one scrolling direction is valid at a time.
         // End the communication right after reporting the movement.
